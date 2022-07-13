@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/item_dapan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/item_dapan_check"
+            android:text=""
+            android:checked="false"
+            android:layout_width="30dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_dapan_noidung"
+            android:layout_gravity="center"
+            android:text="Chọn 1 đáp án"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
