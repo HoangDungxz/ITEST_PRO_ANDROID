@@ -5,50 +5,62 @@
     android:orientation="vertical"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/item_dapan"
-            android:layout_width="wrap_content"
+            android:layout_width="297dp"
             android:layout_height="wrap_content"
+
             android:orientation="vertical">
 
             <TextView
+                android:textColor="#ff3478"
                 android:id="@+id/item_danhsachketqua_monthi"
-                android:text="HTML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:text="HTML" />
 
-            <TextView
-                android:id="@+id/item_danhsachketqua_de"
-                android:text="Đề số 6"
-                android:fontFamily="sans-serif-condensed-light"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_danhsachketqua_de"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Đề số 6" />
+
+                <TextView
+                    android:id="@+id/item_danhsachketqua_ngay"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="right"
+                    android:text="10/10" />
+            </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/item_danhsachketqua_ngay"
-            android:layout_marginLeft="30dp"
-            android:layout_gravity="center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10/10" />
 
         <TextView
+            android:textColor="#ff3478"
             android:id="@+id/item_danhsachketqua_diem"
-            android:layout_marginLeft="30dp"
-            android:gravity="right|center_vertical"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
-            android:layout_marginRight="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="3dp"
             android:fontFamily="sans-serif-condensed-medium"
-            android:textSize="20dp"
-            android:text="100" />
-    </LinearLayout>
+            android:gravity="right|top"
+            android:text="100"
+            android:textSize="20dp" />
+    </RelativeLayout>
 
 </LinearLayout>

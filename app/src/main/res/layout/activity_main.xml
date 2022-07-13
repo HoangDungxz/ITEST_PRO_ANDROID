@@ -32,44 +32,74 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/white"
-            android:orientation="vertical">
-
-            <!-- Header -->
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:layout_marginBottom="100dp"
+                android:orientation="vertical">
 
-                android:gravity="bottom"
-                android:orientation="vertical"
+                <!-- Header -->
 
-                android:theme="@style/ThemeOverlay.AppCompat.Dark">
-
-                <TextView
-                    android:id="@+id/tenhocvien"
-                    android:paddingBottom="30dp"
-                    android:paddingTop="30dp"
-                    android:background="#00BCD4"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="25dp"
-                    android:textColor="@color/white"
-                    android:text="abc" />
+                    android:background="@drawable/bgr"
+                    android:animateLayoutChanges="true"
+                    android:gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingTop="15dp"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true"
 
-                <ListView
-                    android:id="@+id/cuocthi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:id="@+id/tenhocvien"
+                        android:textSize="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/nav_header_vertical_spacing"
+                        android:text="@string/nav_header_title"
+
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="2dp"
+                        android:paddingBottom="20dp"
+                        android:id="@+id/sv_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nav_header_subtitle" />
+
+                    <ListView
+                        android:background="@color/white"
+                        android:id="@+id/cuocthi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+            <Button
+                android:id="@+id/logout"
+                android:background="@drawable/rounded_corner"
+                android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
 
+                android:text="log out" />
+        </RelativeLayout>
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                         .build();
 
                 Moshi moshi = new Moshi.Builder().build();
-                
+
                 Type usersType = Types.newParameterizedType(LogInData.class);
                 final JsonAdapter<LogInData> jsonAdapter = moshi.adapter(usersType);
 
@@ -102,6 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor = getSharedPreferences(MainActivity.LOGIN, MODE_PRIVATE).edit();
                                     editor.putBoolean("islogin", logInData.getIslogin());
                                     editor.putString("tenhocvien", logInData.getUser().getFullname());
+                                    editor.putString("email", logInData.getUser().getEmail());
                                     editor.putInt("hocvienid", logInData.getUser().getId());
 
                                     editor.apply();

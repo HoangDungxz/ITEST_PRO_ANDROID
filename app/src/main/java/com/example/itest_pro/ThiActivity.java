@@ -115,9 +115,7 @@ public class ThiActivity extends AppCompatActivity {
                             public void onClick(View view) {
 
                                 CauHoiData c = MainActivity.cauHoiData;
-
-//                                Intent intent = new Intent(self, MainActivity.class);
-//                                startActivity(intent);
+                                
                                 CacCauHoiDuocLuaChon cacCauHoiDuocLuaChon = new CacCauHoiDuocLuaChon();
 
                                 List<CauHoiDuocLuaChon> cauHoiDuocLuaChonList = new ArrayList<>();

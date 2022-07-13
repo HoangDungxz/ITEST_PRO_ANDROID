@@ -64,23 +64,16 @@ public class MainActivity extends AppCompatActivity {
         if (isLogin == false) {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
-        } else {
-
+            return;
         }
+        String str_tenhocvien = prefs.getString("tenhocvien", "");
+        String str_sv_email = prefs.getString("email", "");
+
         OkHttpClient client = new OkHttpClient();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-
-//        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
 
         DrawerLayout drawer = binding.drawerLayout;
 
@@ -99,10 +92,12 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        String str_tenhocvien = prefs.getString("tenhocvien", "");
+
         TextView tenhocvien = findViewById(R.id.tenhocvien);
         tenhocvien.setText(str_tenhocvien);
 
+        TextView sv_email = findViewById(R.id.sv_email);
+        sv_email.setText(str_sv_email);
 
         Integer hocvienid = prefs.getInt("hocvienid", 0);
 
@@ -132,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
+                        setTitle(str_tenhocvien);
                         AdapterCuocThi adapterCuocThi = new AdapterCuocThi(MainActivity.this, cuocThiList);
                         ListView listView = findViewById(R.id.cuocthi);
                         listView.setAdapter(adapterCuocThi);
@@ -174,6 +169,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button logout = findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
+
+                SharedPreferences.Editor editor = getSharedPreferences(LOGIN, MODE_PRIVATE).edit();
+                editor.putBoolean("islogin", false);
+                editor.apply();
+                finish();
+                startActivity(getIntent());
+                return;
+            }
+        });
 
     }
 
